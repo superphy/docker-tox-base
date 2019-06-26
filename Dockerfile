@@ -2,6 +2,8 @@ FROM themattrix/pyenv
 
 MAINTAINER Matthew Tardiff <mattrix@gmail.com>
 
+RUN cd /.pyenv/plugins/python-build/../.. && git pull && cd -
+
 RUN groupadd -r tox --gid=999 && \
     useradd -m -r -g tox --uid=999 tox
 
