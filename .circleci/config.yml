@@ -65,6 +65,6 @@
               filters:
                 branches:
                   only: master
-          - publish-tag:
+          - publish-sha:
               requires:
                 - build
