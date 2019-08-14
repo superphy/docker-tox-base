@@ -26,6 +26,9 @@ RUN pyenv local 3.7.0 && \
     python -m pip install tox==3.13.2 && \
     pyenv local --unset && \
     pyenv rehash
+    
+# Bundle in ffi deps required for lemongraph
+RUN apt-get update -y && apt-get install -y libffi-dev zlib1g-dev python-dev python-cffi libatlas-base-dev
 
 WORKDIR /app
 VOLUME /src
